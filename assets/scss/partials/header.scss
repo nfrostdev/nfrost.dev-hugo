@@ -1,0 +1,19 @@
+.header {
+  @apply flex flex-col justify-center items-center p-4 pt-16 text-sm;
+
+  &__logo {
+    @apply h-12 mb-8;
+  }
+
+  &__nav {
+    @apply grid grid-cols-4 text-center rounded overflow-hidden leading-none shadow;
+  }
+
+  &__link {
+    @apply p-3 bg-white transition duration-100 ease-in-out font-semibold;
+
+    &:hover, &:focus {
+      @apply bg-nf-blue text-white;
+    }
+  }
+}

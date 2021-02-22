@@ -1,0 +1,16 @@
+<header class="header">
+    {{ $logo := resources.Get "images/favicon.svg" | minify | fingerprint }}
+    <img src="{{ $logo.Permalink }}" alt="NF Logo" class="header__logo"/>
+
+    {{ $links := slice (dict "text" "Portfolio" "url" "/") (dict "text" "Resume" "url" "/") (dict "text" "Github" "url" "https://github.com/nfrostdev") (dict "text" "Contact" "url" "mailto:nfrost.dev@gmail.com") }}
+
+    <nav class="header__nav" aria-label="Primary">
+        {{ range $links }}
+            <a href="{{ .url }}"
+               {{ if ne .url "/" }} target="_blank" rel="noopener" {{ end }}
+               class="header__link">
+                <span>{{ .text }}</span>
+            </a>
+        {{ end }}
+    </nav>
+</header>

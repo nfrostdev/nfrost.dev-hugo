@@ -1,6 +1,6 @@
-baseURL: "https://www.cktech.biz/"
+baseURL: "https://www.nfrost.dev/"
 languageCode: "en-us"
-title: "CK Technologies"
+title: "Nick Frost"
 canonifyURLs: true
 disableKinds: ["taxonomy", "taxonomyTerm"]
 enableRobotsTXT: true

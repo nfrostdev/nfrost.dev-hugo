@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="author" content="CK Technologies"/>
+    <meta name="author" content="Nick Frost"/>
     <meta name="description" content="{{ .Description }}"/>
 
-{{/*    {{ $favicon := resources.Get "images/favicon.svg" | minify | fingerprint }}*/}}
-{{/*    <link rel="icon" type="image/svg+xml" href="{{ $favicon.Permalink }}">*/}}
+    {{ $favicon := resources.Get "images/favicon.svg" | minify | fingerprint }}
+    <link rel="icon" type="image/svg+xml" href="{{ $favicon.Permalink }}">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
@@ -19,7 +19,7 @@
     <style>{{ $style.Content | safeCSS }}</style>
 </head>
 <body>
-{{/*{{ partial "partials/header.html" . }}*/}}
+{{ partial "partials/header.html" . }}
 
 <main id="main" class="main">
     {{ block "main" . }}{{ end }}
