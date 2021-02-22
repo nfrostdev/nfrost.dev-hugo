@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="CK Technologies"/>
+    <meta name="description" content="{{ .Description }}"/>
+
+{{/*    {{ $favicon := resources.Get "images/favicon.svg" | minify | fingerprint }}*/}}
+{{/*    <link rel="icon" type="image/svg+xml" href="{{ $favicon.Permalink }}">*/}}
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+
+    {{ $options := dict "targetPath" "css/main.css" }}
+    {{ $scss := resources.Get "scss/main.scss" | toCSS $options }}
+    {{ $style := $scss | resources.PostCSS | minify }}
+    <style>{{ $style.Content | safeCSS }}</style>
+</head>
+<body>
+{{/*{{ partial "partials/header.html" . }}*/}}
+
+<main id="main" class="main">
+    {{ block "main" . }}{{ end }}
+</main>
+
+{{/*{{ partial "partials/footer.html" . }}*/}}
+
+{{ $main := resources.Get "js/main.js" }}
+{{ $js := slice $main | resources.Concat "js/site.js" | minify }}
+<script>{{ $js.Content | safeJS }}</script>
+
+</body>
+</html>

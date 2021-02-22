@@ -1,0 +1,7 @@
+baseURL: "https://www.cktech.biz/"
+languageCode: "en-us"
+title: "CK Technologies"
+canonifyURLs: true
+disableKinds: ["taxonomy", "taxonomyTerm"]
+enableRobotsTXT: true
+enableGitInfo: true

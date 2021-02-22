@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind utilities;
+@import './font';
+
+html {
+  font-family: 'Arimo', sans-serif;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  @apply h-full;
+}
+
+body {
+  @apply flex flex-col;
+}
+
+p {
+  @apply text-lg;
+}
+
+p, ul, ol, address {
+  @apply mb-4 mx-auto max-w-xl text-lg;
+}
+
+ul {
+  @apply list-disc;
+}
+
+ul, ol {
+  @apply list-inside pl-4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply mx-auto max-w-xl font-bold;
+}
+
+h1 {
+  @apply font-bold text-4xl pb-6;
+}
+
+h2 {
+  @apply text-2xl py-2;
+}
+
+h3 {
+  @apply text-xl py-1 underline;
+}
+
+h4 {
+  @apply text-lg pt-2 text-ck-green;
+}
+
+.main {
+  @apply max-w-4xl w-full p-6 mx-auto flex-grow;
+
+  @media (min-width: 48em) {
+    @apply py-12;
+  }
+
+  a {
+    @apply text-ck-green underline inline-flex justify-start items-center;
+  }
+}
+
+.header, .hero, .footer {
+  @apply flex-shrink-0;
+}
+
+.external-link-icon {
+  @apply h-3 ml-1;
+}
+
+.pdf-link-icon, .excel-link-icon {
+  @apply h-5 mr-2 flex-grow float-left;
+}
+
+.pdf-link-icon {
+  @apply text-red-700;
+}
+
+.excel-link-icon {
+  @apply text-green-700;
+}
+
+.anchor-link-icon {
+  @apply h-4 mr-1 text-ck-green;
+}
+
+.link-copied-notice {
+  @apply fixed flex justify-center items-center bottom-0 left-0 right-0 pb-8 text-sm transition duration-200 ease-linear;
+
+  &__container {
+    @apply flex justify-center items-center text-center bg-ck-green text-white rounded shadow p-3 leading-none;
+  }
+
+  &__icon {
+    @apply w-3 h-3 mr-3;
+  }
+}
