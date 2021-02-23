@@ -6,13 +6,11 @@ function initProjectLinkTransitions() {
         if (link.href.includes(window.location.origin) && !link.href.includes('/images/') && !link.href.includes('/documents/')) {
             link.addEventListener('click', event => {
                 event.preventDefault();
-
                 classes.forEach(className => {
                     document.querySelectorAll('.' + className + '-inactive').forEach(transition => {
                         transition.classList.add('slide', className);
                     })
                 })
-
                 setTimeout(() => window.location.href = link.href, 350)
             })
         }
@@ -22,6 +20,8 @@ function initProjectLinkTransitions() {
 initProjectLinkTransitions();
 
 function fadeInPage() {
+    document.querySelector('html').classList.add('overflow-x-hidden');
+
     classes.forEach(className => {
         document.querySelectorAll('.' + className).forEach(transition => {
             transition.classList.add(className + '-inactive');
@@ -31,7 +31,10 @@ function fadeInPage() {
         transition.classList.remove('slide-left');
         transition.classList.remove('slide-right');
         transition.classList.remove('slide-up');
-        setTimeout(() => transition.classList.remove('slide'), 350);
+        setTimeout(() => {
+            document.querySelector('html').classList.remove('overflow-x-hidden');
+            transition.classList.remove('slide');
+        }, 350);
     })
 }
 

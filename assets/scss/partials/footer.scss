@@ -1,0 +1,7 @@
+.footer {
+  @apply flex justify-center items-center text-xs text-gray-600 p-6 pb-20;
+
+  &__date {
+    @apply mr-2;
+  }
+}

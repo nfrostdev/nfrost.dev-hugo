@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.LanguageCode }}" class="overflow-x-hidden">
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -25,7 +25,7 @@
     {{ block "main" . }}{{ end }}
 </main>
 
-{{/*{{ partial "partials/footer.html" . }}*/}}
+{{ partial "partials/footer.html" . }}
 
 {{ $main := resources.Get "js/main.js" }}
 {{ $js := slice $main | resources.Concat "js/site.js" | minify }}

@@ -6,7 +6,7 @@
   }
 
   &__nav {
-    @apply fixed bottom-0 left-0 right-0 mb-6 mx-6 grid grid-cols-4 text-center rounded overflow-hidden leading-none shadow text-xs;
+    @apply fixed bottom-0 left-0 right-0 mb-6 mx-6 grid grid-cols-4 text-center rounded overflow-hidden leading-none shadow text-xs z-20;
 
     @media(min-width: 21em) {
       @apply text-sm mb-8 mx-8;

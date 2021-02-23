@@ -8,6 +8,7 @@ image: home.kvcc.edu.png
 contributors:
     - Kerri Totten
     - Ana Danoski
+    - Andrea Hartmann
 
 location: https://home.kvcc.edu/
 
