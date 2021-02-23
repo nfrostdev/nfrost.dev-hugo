@@ -1,7 +1,7 @@
 <header class="header">
     <a href="#main" class="sr-only">Skip to main content.</a>
     {{ $logo := resources.Get "images/favicon.svg" | minify | fingerprint }}
-    <img src="{{ $logo.Permalink }}" alt="NF Logo" class="header__logo"/>
+    <img src="{{ $logo.Permalink }}" alt="NF Logo" class="header__logo" width="78" height="48"/>
 
     {{ $resume := resources.Get "documents/Nick_Frost_Resume.pdf" | fingerprint }}
 

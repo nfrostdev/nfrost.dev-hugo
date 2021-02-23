@@ -4,7 +4,7 @@ title: "Department Directory"
 date: 2021-02-23T12:01:05-05:00
 draft: false
 client: Kalamazoo Valley Community College
-image: departments.kvcc.edu.png
+image: departments.kvcc.edu.jpg
 
 contributors:
     - Chad Cunningham
