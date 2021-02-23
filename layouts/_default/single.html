@@ -1,12 +1,46 @@
 {{ define "main" }}
-    <h1>{{ $.Title }}</h1>
-    <div class="project__languages">
-        <div>Languages</div>
-        <div>
-            {{ range $index, $language := $.Params.Languages }}
-                {{ $language }}{{ if ne $index (sub (len $.Params.Languages) 1) }},{{ end }}
-            {{ end }}
+    <div class="project__content">
+        {{ $image := resources.Get (print "images/" $.Params.Image) | fingerprint }}
+        <img src="{{ $image.Permalink }}" class="project__image" alt="{{ $.Title}} Screenshot"/>
+        <div class="project__attributes">
+            <h1 class="project__title">{{ $.Title }}</h1>
+
+            <div class="project__attribute">
+                <div class="project__attribute__label">Client</div>
+                <div>{{ $.Params.Client }}</div>
+            </div>
+
+            <div class="project__attribute">
+                <div class="project__attribute__label">Contributors</div>
+                <div>
+                    {{ range $index, $contributor := $.Params.Contributors }}
+                        {{ $contributor }}{{ if ne $index (sub (len $.Params.Contributors) 1) }},{{ end }}
+                    {{ end }}
+                </div>
+            </div>
+
+            <div class="project__attribute">
+                <div class="project__attribute__label">Languages</div>
+                <div>
+                    {{ range $index, $language := $.Params.Languages }}
+                        {{ $language }}{{ if ne $index (sub (len $.Params.Languages) 1) }},{{ end }}
+                    {{ end }}
+                </div>
+            </div>
+
+            <div class="project__attribute">
+                <div class="project__attribute__label">Location</div>
+                <div><a href="{{ $.Params.Location }}" target="_blank" rel="noopener">{{ $.Params.Location }}</a></div>
+            </div>
+
+            <div class="project__attribute">
+                <div class="project__attribute__label">Technologies</div>
+                {{ range $technology := $.Params.Technologies }}
+                    {{ partial "partials/technology-link.html" (dict "technology" $technology ) }}
+                {{ end }}
+            </div>
         </div>
     </div>
+
     {{ .Content }}
 {{ end }}

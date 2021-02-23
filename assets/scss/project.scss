@@ -1,0 +1,37 @@
+.project {
+  &__content {
+    @apply flex flex-col justify-start items-start;
+
+    @media (min-width: 48em) {
+      @apply flex-row-reverse;
+    }
+  }
+
+  &__image {
+    @apply max-w-3xl w-full rounded-md shadow-md mb-6;
+
+    @media (min-width: 48em) {
+      @apply flex-row-reverse ml-10;
+    }
+  }
+
+  &__title {
+    @apply text-3xl font-bold mb-4;
+  }
+
+  &__attribute {
+    @apply mb-4 leading-none;
+
+    &s {
+      @apply flex flex-col justify-start items-start;
+    }
+
+    &__label {
+      @apply font-bold leading-none mb-1;
+    }
+
+    a:not(.technology-link) {
+      @apply text-nf-blue font-semibold underline;
+    }
+  }
+}

@@ -6,7 +6,7 @@
   }
 
   &__image {
-    @apply max-w-3xl w-full rounded shadow mb-2 transition-all duration-100 ease-in-out;
+    @apply max-w-3xl w-full rounded-md shadow-md mb-2 transition-all duration-100 ease-in-out;
     filter: brightness(0.975);
 
     &:hover, &:focus {
@@ -18,7 +18,7 @@
     @apply flex flex-col justify-center items-center;
 
     @media (min-width: 48em) {
-      @apply items-end mr-6 mt-8;
+      @apply items-end mr-8 mt-8;
     }
   }
 
