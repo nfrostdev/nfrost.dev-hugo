@@ -3,7 +3,9 @@
     {{ $logo := resources.Get "images/favicon.svg" | minify | fingerprint }}
     <img src="{{ $logo.Permalink }}" alt="NF Logo" class="header__logo"/>
 
-    {{ $links := slice (dict "text" "Portfolio" "url" "/") (dict "text" "Resume" "url" "/") (dict "text" "Github" "url" "https://github.com/nfrostdev") (dict "text" "Contact" "url" "mailto:nfrost.dev@gmail.com") }}
+    {{ $resume := resources.Get "documents/Nick_Frost_Resume.pdf" | fingerprint }}
+
+    {{ $links := slice (dict "text" "Portfolio" "url" "/") (dict "text" "Resume" "url" $resume.Permalink ) (dict "text" "Github" "url" "https://github.com/nfrostdev") (dict "text" "Contact" "url" "mailto:nfrost.dev@gmail.com") }}
 
     <nav class="header__nav" aria-label="Primary">
         {{ range $links }}
