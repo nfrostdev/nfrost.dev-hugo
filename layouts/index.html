@@ -7,7 +7,7 @@
                     {{/* TODO: use webp */}}
                     {{ $webpBg := resources.Get (print "images/" $page.Params.Image) | minify | fingerprint }}
                     {{ $jpgBg := resources.Get (print "images/" $page.Params.Image) | minify | fingerprint }}
-                    {{ $sizes := slice "272" "327" "366" "461" "576" }}
+                    {{ $sizes := slice "272" "327" "366" "461" "576" "666" }}
                     <picture>
                         {{ range $sizes }}
                             <source media="(max-width: {{ . }}px)"

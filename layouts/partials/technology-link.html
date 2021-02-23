@@ -4,6 +4,12 @@
     {{ $url = "https://laravel.com/" }}
 {{ else if eq .technology "Docker" }}
     {{ $url = "https://www.docker.com/" }}
+{{ else if eq .technology "Firebase" }}
+    {{ $url = "https://firebase.google.com/" }}
+{{ else if eq .technology "Tailwind CSS" }}
+    {{ $url = "https://tailwindcss.com/" }}
+{{ else if eq .technology "Vue.js" }}
+    {{ $url = "https://vuejs.org/" }}
 {{ end }}
 
 <a href="{{ $url }}" target="_blank" rel="noopener" class="technology-link">{{ .technology }}</a>
