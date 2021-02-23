@@ -22,7 +22,7 @@ technologies:
     - Firebase
 
 details:
-    - The sign in application is a good intermediary page to get users to where they need to go.
+    - The sign in application is an intermediary web page to get users to where they need to go.
     - Previously users would have to log in to a user portal first, and then decide where they wanted to go. This was a waste of bandwidth and time for the user, so having a dedicated online application authentication flow was good overall for everyone.
     - We can display notices to users about outages or upcoming downtime and events before they happen.
 
