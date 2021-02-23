@@ -22,7 +22,7 @@ technologies:
     - Vue.js
 
 details:
-    - I wanted a simple app just for managing grocery lists without a bunch of ads or needing to sign in.
+    - I made a simple app just for managing grocery lists without a bunch of ads or needing to sign in.
     - Something simple, that just worked when I went there and did what I needed it to do; and this is the concept I came up with.
 
 contributions:
