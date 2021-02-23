@@ -1,0 +1,22 @@
+# Checks if the pushed code will successfully build and minify, for any non-master branch.
+name: Build Status
+on:
+  pull_request:
+    branches:
+      - '*'
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "0.80.0"
+          extended: true
+      - name: Setup Node
+        uses: actions/setup-node@master
+      - name: Install NPM Dependencies
+        run: npm install
+      - name: Build Site
+        run: hugo --minify
