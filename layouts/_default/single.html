@@ -31,7 +31,7 @@
                 <div class="project__attribute__label">Contributors</div>
                 <div>
                     {{ range $index, $contributor := sort $.Params.Contributors }}
-                        {{ $contributor }}{{ if ne $index (sub (len $.Params.Contributors) 1) }},{{ end }}
+                        {{ partial "partials/contributor-link.html" (dict "contributor" $contributor) }}{{ if ne $index (sub (len $.Params.Contributors) 1) }},{{ end }}
                     {{ end }}
                 </div>
             </div>

@@ -1,0 +1,13 @@
+{{ $url := "" }}
+
+{{ if eq .contributor "Ana Danoski"}}
+    {{ $url = "https://www.anastaciadanoski.com/" }}
+{{ else if eq .contributor "Westin Curtis"}}
+    {{ $url = "https://westin.dev/" }}
+{{ end }}
+
+{{ if $url }}
+    <a href="{{ $url }}" target="_blank" rel="noopener">{{ .contributor }}</a>
+{{ else }}
+    <span>{{ .contributor }}</span>
+{{ end }}
