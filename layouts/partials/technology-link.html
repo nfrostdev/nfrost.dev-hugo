@@ -1,0 +1,9 @@
+{{ $url := "" }}
+
+{{ if eq .technology "Laravel"}}
+    {{ $url = "https://laravel.com/" }}
+{{ else if eq .technology "Docker" }}
+    {{ $url = "https://www.docker.com/" }}
+{{ end }}
+
+<a href="{{ $url }}" target="_blank" rel="noopener" class="technology-link">{{ .technology }}</a>

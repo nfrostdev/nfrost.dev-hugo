@@ -1,3 +1,23 @@
 {{ define "main" }}
-    {{ .Content }}
+    {{ $pages := slice (.Site.GetPage "/employee-portal") }}
+    {{ range $page := $pages}}
+        {{ $image := resources.Get (print "images/" $page.Params.Image) | fingerprint }}
+        <div class="project-link">
+            <a href="{{ $page.Permalink }}" aria-hidden="true">
+                <img src="{{ $image.Permalink }}" class="project-link__image" alt="{{ $page.Title}} Screenshot Preview"/>
+            </a>
+
+            <div class="project-link__container">
+                <a href="{{ $page.Permalink }}" class="project-link__sub-container">
+                    <span class="project-link__title">{{ $page.Title }}</span>
+                    <span class="project-link__client">{{ $page.Params.Client }}</span>
+                </a>
+                <div class="project-link__technologies">
+                    {{ range $technology := $page.Params.Technologies }}
+                        {{ partial "partials/technology-link.html" (dict "technology" $technology ) }}
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    {{ end}}
 {{ end }}

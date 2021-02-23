@@ -1,0 +1,60 @@
+.project-link {
+  @apply flex flex-col justify-center items-center transition duration-100 ease-in-out;
+
+  @media (min-width: 48em) {
+    @apply flex-row-reverse items-start text-right;
+  }
+
+  &__image {
+    @apply max-w-3xl w-full rounded shadow mb-2 transition-all duration-100 ease-in-out;
+    filter: brightness(0.975);
+
+    &:hover, &:focus {
+      filter: brightness(1);
+    }
+  }
+
+  &__container {
+    @apply flex flex-col justify-center items-center;
+
+    @media (min-width: 48em) {
+      @apply items-end mr-6 mt-8;
+    }
+  }
+
+  &__sub-container {
+    @apply flex flex-col justify-center items-center transition duration-100 ease-in-out;
+
+    @media (min-width: 48em) {
+      @apply items-end;
+    }
+
+    &:hover, &:focus {
+      @apply text-nf-blue;
+    }
+  }
+
+  &__title {
+    @apply font-bold text-lg;
+
+    @media (min-width: 48em) {
+      @apply text-4xl;
+    }
+  }
+
+  &__client {
+    @apply text-sm mb-1;
+
+    @media (min-width: 48em) {
+      @apply text-2xl;
+    }
+  }
+
+  &__technologies {
+    @apply flex justify-center items-center flex-wrap;
+
+    @media (min-width: 48em) {
+      @apply justify-end;
+    }
+  }
+}

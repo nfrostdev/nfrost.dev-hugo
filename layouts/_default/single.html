@@ -1,4 +1,12 @@
 {{ define "main" }}
-    <h1>{{ .Title }}</h1>
+    <h1>{{ $.Title }}</h1>
+    <div class="project__languages">
+        <div>Languages</div>
+        <div>
+            {{ range $index, $language := $.Params.Languages }}
+                {{ $language }}{{ if ne $index (sub (len $.Params.Languages) 1) }},{{ end }}
+            {{ end }}
+        </div>
+    </div>
     {{ .Content }}
 {{ end }}

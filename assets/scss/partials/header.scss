@@ -1,16 +1,28 @@
 .header {
-  @apply flex flex-col justify-center items-center p-4 pt-16 text-sm;
+  @apply flex flex-col justify-center items-center px-4 pt-16 mb-0;
 
   &__logo {
     @apply h-12 mb-8;
   }
 
   &__nav {
-    @apply grid grid-cols-4 text-center rounded overflow-hidden leading-none shadow;
+    @apply fixed bottom-0 left-0 right-0 mb-6 mx-6 grid grid-cols-4 text-center rounded overflow-hidden leading-none shadow text-xs;
+
+    @media(min-width: 21em) {
+      @apply text-sm mb-8 mx-8;
+    }
+
+    @media(min-width: 48em) {
+      @apply text-base relative;
+    }
   }
 
   &__link {
     @apply p-3 bg-white transition duration-100 ease-in-out font-semibold;
+
+    @media(min-width: 48em) {
+      @apply px-4 py-3;
+    }
 
     &:hover, &:focus {
       @apply bg-nf-blue text-white;
