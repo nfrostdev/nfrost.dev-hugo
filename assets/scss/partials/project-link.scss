@@ -6,7 +6,7 @@
   }
 
   &__image {
-    @apply max-w-3xl w-full rounded-md shadow-md mb-2 transition-all duration-100 ease-in-out;
+    @apply max-w-xl w-full rounded-md shadow-md mb-2 transition-all duration-100 ease-in-out;
     filter: brightness(0.975);
 
     &:hover, &:focus {
@@ -38,7 +38,7 @@
     @apply font-bold text-lg;
 
     @media (min-width: 48em) {
-      @apply text-4xl;
+      @apply text-3xl;
     }
   }
 
@@ -46,7 +46,7 @@
     @apply text-sm mb-1;
 
     @media (min-width: 48em) {
-      @apply text-2xl;
+      @apply text-lg;
     }
   }
 

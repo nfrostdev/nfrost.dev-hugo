@@ -1,9 +1,9 @@
 .project {
   &__content {
-    @apply flex flex-col justify-start items-start;
+    @apply flex flex-col justify-start items-start w-full;
 
     @media (min-width: 48em) {
-      @apply flex-row-reverse;
+      @apply flex-row-reverse justify-between mb-12;
     }
   }
 
@@ -11,7 +11,7 @@
     @apply max-w-3xl w-full rounded-md shadow-md mb-6;
 
     @media (min-width: 48em) {
-      @apply flex-row-reverse ml-10;
+      @apply flex-row-reverse ml-6 mb-0;
     }
   }
 
@@ -32,6 +32,22 @@
 
     a:not(.technology-link) {
       @apply text-nf-blue font-semibold underline;
+    }
+  }
+
+  &__details {
+    @apply grid gap-6;
+
+    @media (min-width: 48em) {
+      @apply grid-cols-3;
+    }
+
+    &__h2 {
+      @apply text-xl font-bold;
+    }
+
+    &__p {
+      @apply mb-3;
     }
   }
 }

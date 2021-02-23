@@ -1,7 +1,9 @@
 {{ define "main" }}
     <div class="project__content">
         {{ $image := resources.Get (print "images/" $.Params.Image) | fingerprint }}
-        <img src="{{ $image.Permalink }}" class="project__image" alt="{{ $.Title}} Screenshot"/>
+        <a href="{{ $image.Permalink }}" target="_blank" rel="noopener">
+            <img src="{{ $image.Permalink }}" class="project__image" alt="{{ $.Title}} Screenshot"/>
+        </a>
         <div class="project__attributes">
             <h1 class="project__title">{{ $.Title }}</h1>
 
@@ -42,5 +44,28 @@
         </div>
     </div>
 
+    <div class="project__details">
+        <div>
+            {{/* Description is a reserved keyword in Hugo for params. */}}
+            <h2 class="project__details__h2">Details</h2>
+            {{ range $.Params.Details }}
+                <p class="project__details__p">{{ . }}</p>
+            {{ end }}
+        </div>
+
+        <div>
+            <h2 class="project__details__h2">Contributions</h2>
+            {{ range $.Params.Contributions }}
+                <p class="project__details__p">{{ . }}</p>
+            {{ end }}
+        </div>
+
+        <div>
+            <h2 class="project__details__h2">Obstacles</h2>
+            {{ range $.Params.Obstacles }}
+                <p class="project__details__p">{{ . }}</p>
+            {{ end }}
+        </div>
+    </div>
     {{ .Content }}
 {{ end }}
