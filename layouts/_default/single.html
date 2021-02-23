@@ -30,7 +30,7 @@
             <div class="project__attribute">
                 <div class="project__attribute__label">Contributors</div>
                 <div>
-                    {{ range $index, $contributor := $.Params.Contributors }}
+                    {{ range $index, $contributor := sort $.Params.Contributors }}
                         {{ $contributor }}{{ if ne $index (sub (len $.Params.Contributors) 1) }},{{ end }}
                     {{ end }}
                 </div>
@@ -39,7 +39,7 @@
             <div class="project__attribute">
                 <div class="project__attribute__label">Languages</div>
                 <div>
-                    {{ range $index, $language := $.Params.Languages }}
+                    {{ range $index, $language := sort $.Params.Languages }}
                         {{ $language }}{{ if ne $index (sub (len $.Params.Languages) 1) }},{{ end }}
                     {{ end }}
                 </div>
