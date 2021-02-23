@@ -1,38 +1,40 @@
 {{ define "main" }}
-    {{ $pages := slice (.Site.GetPage "/employee-portal") }}
-    {{ range $page := $pages}}
-        <div class="project-link">
-            <a href="{{ $page.Permalink }}" aria-hidden="true" class="project-link__image__container project-link__a slide slide-right">
-                {{/* TODO: use webp */}}
-                {{ $webpBg := resources.Get (print "images/" $page.Params.Image) | minify | fingerprint }}
-                {{ $jpgBg := resources.Get (print "images/" $page.Params.Image) | minify | fingerprint }}
-                {{ $sizes := slice "272" "327" "366" "461" "576" }}
-                <picture>
-                    {{ range $sizes }}
-                        <source media="(max-width: {{ . }}px)"
-                                srcset='{{ ($webpBg.Resize (print . "x q100")).Permalink }}'/>
-                    {{ end }}
-                    <img src="{{ $webpBg.Permalink }}"
-                         class="project-link__image"
-                         aria-hidden="true"
-                         loading="lazy"
-                         width="576" height="360"
-                         onerror="this.onerror = null; this.src = '{{ $jpgBg.Permalink }}'"
-                         alt="{{ $page.Title}} Screenshot Preview"/>
-                </picture>
-            </a>
-
-            <div class="project-link__container slide slide-left">
-                <a href="{{ $page.Permalink }}" class="project-link__sub-container project-link__a">
-                    <span class="project-link__title">{{ $page.Title }}</span>
-                    <span class="project-link__client">{{ $page.Params.Client }}</span>
+    {{ $pages := slice (.Site.GetPage "/employee-portal") (.Site.GetPage "/groceries-list-app") }}
+    <div class="project-links">
+        {{ range $page := $pages}}
+            <div class="project-link">
+                <a href="{{ $page.Permalink }}" aria-hidden="true" class="project-link__image__container project-link__a slide slide-right">
+                    {{/* TODO: use webp */}}
+                    {{ $webpBg := resources.Get (print "images/" $page.Params.Image) | minify | fingerprint }}
+                    {{ $jpgBg := resources.Get (print "images/" $page.Params.Image) | minify | fingerprint }}
+                    {{ $sizes := slice "272" "327" "366" "461" "576" }}
+                    <picture>
+                        {{ range $sizes }}
+                            <source media="(max-width: {{ . }}px)"
+                                    srcset='{{ ($webpBg.Resize (print . "x q100")).Permalink }}'/>
+                        {{ end }}
+                        <img src="{{ $webpBg.Permalink }}"
+                             class="project-link__image"
+                             aria-hidden="true"
+                             loading="lazy"
+                             width="576" height="360"
+                             onerror="this.onerror = null; this.src = '{{ $jpgBg.Permalink }}'"
+                             alt="{{ $page.Title}} Screenshot Preview"/>
+                    </picture>
                 </a>
-                <div class="project-link__technologies">
-                    {{ range $technology := $page.Params.Technologies }}
-                        {{ partial "partials/technology-link.html" (dict "technology" $technology ) }}
-                    {{ end }}
+
+                <div class="project-link__container slide slide-left">
+                    <a href="{{ $page.Permalink }}" class="project-link__sub-container project-link__a">
+                        <span class="project-link__title">{{ $page.Title }}</span>
+                        <span class="project-link__client">{{ $page.Params.Client }}</span>
+                    </a>
+                    <div class="project-link__technologies">
+                        {{ range $technology := $page.Params.Technologies }}
+                            {{ partial "partials/technology-link.html" (dict "technology" $technology ) }}
+                        {{ end }}
+                    </div>
                 </div>
             </div>
-        </div>
-    {{ end}}
+        {{ end}}
+    </div>
 {{ end }}

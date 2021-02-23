@@ -1,12 +1,16 @@
 .project-link {
-  @apply flex flex-col justify-center items-center transition duration-100 ease-in-out;
+  @apply flex flex-col justify-center w-full items-center transition duration-100 ease-in-out;
 
   @media (min-width: 48em) {
     @apply flex-row-reverse items-start text-right;
   }
 
+  &s {
+    @apply grid gap-6;
+  }
+
   &__image {
-    @apply max-w-xl w-full rounded-md shadow-md mb-2 transition-all duration-100 ease-in-out;
+    @apply max-w-2xl w-full rounded-md shadow-md mb-2 transition-all duration-100 ease-in-out flex-grow;
     filter: brightness(0.975);
 
     &:hover, &:focus {
@@ -15,7 +19,7 @@
   }
 
   &__container {
-    @apply flex flex-col justify-center items-center;
+    @apply flex flex-col justify-center items-center flex-grow;
 
     @media (min-width: 48em) {
       @apply items-end mr-8 mt-8;
