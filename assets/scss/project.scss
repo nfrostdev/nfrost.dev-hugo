@@ -33,6 +33,10 @@
     a:not(.technology-link) {
       @apply text-nf-blue font-semibold underline;
     }
+
+    &--technologies {
+      @apply max-w-xs;
+    }
   }
 
   &__details {

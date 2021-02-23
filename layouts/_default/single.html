@@ -50,7 +50,7 @@
                 <div><a href="{{ $.Params.Location }}" target="_blank" rel="noopener">{{ $.Params.Location }}</a></div>
             </div>
 
-            <div class="project__attribute">
+            <div class="project__attribute project__attribute--technologies">
                 <div class="project__attribute__label">Technologies</div>
                 {{ range $technology := $.Params.Technologies }}
                     {{ partial "partials/technology-link.html" (dict "technology" $technology ) }}
