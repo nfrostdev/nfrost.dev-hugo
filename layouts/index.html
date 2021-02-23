@@ -12,7 +12,7 @@
                     <picture>
                         {{ range $sizes }}
                             <source media="(max-width: {{ . }}px)"
-                                    srcset='{{ ($webpBg.Resize (print . "x q100")).Permalink }}'/>
+                                    srcset='{{ ($webpBg.Resize (print . "x q90")).Permalink }}'/>
                         {{ end }}
                         <img src="{{ $webpBg.Permalink }}"
                              class="project-link__image"
