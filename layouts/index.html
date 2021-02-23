@@ -2,7 +2,7 @@
     {{ $pages := slice (.Site.GetPage "/employee-portal") }}
     {{ range $page := $pages}}
         <div class="project-link">
-            <a href="{{ $page.Permalink }}" aria-hidden="true">
+            <a href="{{ $page.Permalink }}" aria-hidden="true" class="project-link__image__container project-link__a slide slide-right">
                 {{/* TODO: use webp */}}
                 {{ $webpBg := resources.Get (print "images/" $page.Params.Image) | minify | fingerprint }}
                 {{ $jpgBg := resources.Get (print "images/" $page.Params.Image) | minify | fingerprint }}
@@ -22,8 +22,8 @@
                 </picture>
             </a>
 
-            <div class="project-link__container">
-                <a href="{{ $page.Permalink }}" class="project-link__sub-container">
+            <div class="project-link__container slide slide-left">
+                <a href="{{ $page.Permalink }}" class="project-link__sub-container project-link__a">
                     <span class="project-link__title">{{ $page.Title }}</span>
                     <span class="project-link__client">{{ $page.Params.Client }}</span>
                 </a>

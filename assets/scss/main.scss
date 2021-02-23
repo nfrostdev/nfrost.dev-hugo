@@ -23,3 +23,22 @@ body {
 .main {
   @apply flex flex-col justify-start items-center p-6 max-w-6xl w-full mx-auto;
 }
+
+.slide {
+  transition: all 0.25s ease-out;
+}
+
+.slide-left {
+  transform: translateX(-4rem);
+  opacity: 0;
+}
+
+.slide-right {
+  transform: translateX(4rem);
+  opacity: 0;
+}
+
+.slide-up {
+  transform: translateY(4rem);
+  opacity: 0;
+}

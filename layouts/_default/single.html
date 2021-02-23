@@ -4,7 +4,7 @@
         {{ $webpBg := resources.Get (print "images/" $.Params.Image) | minify | fingerprint }}
         {{ $jpgBg := resources.Get (print "images/" $.Params.Image) | minify | fingerprint }}
         {{ $sizes := slice "272" "327" "366" "461" "576" "768" }}
-        <a href="{{ $webpBg.Permalink }}" target="_blank" rel="noopener">
+        <a href="{{ $webpBg.Permalink }}" target="_blank" rel="noopener" class="slide slide-right">
             <picture>
                 {{ range $sizes }}
                     <source media="(max-width: {{ . }}px)"
@@ -19,7 +19,7 @@
                      alt="{{ $.Title}} Screenshot Preview"/>
             </picture>
         </a>
-        <div class="project__attributes">
+        <div class="project__attributes slide slide-left">
             <h1 class="project__title">{{ $.Title }}</h1>
 
             <div class="project__attribute">
@@ -59,7 +59,7 @@
         </div>
     </div>
 
-    <div class="project__details">
+    <div class="project__details slide slide-up">
         <div>
             {{/* Description is a reserved keyword in Hugo for params. */}}
             <h2 class="project__details__h2">Details</h2>
