@@ -55,7 +55,7 @@
   }
 
   &__technologies {
-    @apply flex justify-center items-center flex-wrap;
+    @apply flex justify-center items-center flex-wrap max-w-xs;
 
     @media (min-width: 48em) {
       @apply justify-end;

@@ -10,6 +10,12 @@
     {{ $url = "https://tailwindcss.com/" }}
 {{ else if eq .technology "Vue.js" }}
     {{ $url = "https://vuejs.org/" }}
+{{ else if eq .technology ".NET" }}
+    {{ $url = "https://dotnet.microsoft.com/" }}
+{{ else if eq .technology "Oracle Database" }}
+    {{ $url = "https://www.oracle.com/database/" }}
+{{ else if eq .technology "PostgreSQL" }}
+    {{ $url = "https://www.postgresql.org/" }}
 {{ end }}
 
 <a href="{{ $url }}" target="_blank" rel="noopener" class="technology-link">{{ .technology }}</a>
