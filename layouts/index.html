@@ -1,7 +1,7 @@
 {{ define "main" }}
-    {{ $pages := slice (.Site.GetPage "/kvcc-employee-portal") (.Site.GetPage "/groceries-list-app") (.Site.GetPage "/kvcc-sign-in") (.Site.GetPage "/kvcc-employee-directory") (.Site.GetPage "/kvcc-online-training") (.Site.GetPage "/kvcc-department-directory") }}
+    {{ $pages := slice (.Site.GetPage "/kvcc-employee-portal") (.Site.GetPage "/groceries-list-app") (.Site.GetPage "/kvcc-sign-in") (.Site.GetPage "/kvcc-employee-directory") (.Site.GetPage "/kvcc-online-training") (.Site.GetPage "/kvcc-department-directory") (.Site.GetPage "/kvcc-summit") }}
     <div class="project-links">
-        {{ range $page := $pages}}
+        {{ range $page := sort $pages "Params.Order" "asc"}}
             <div class="project-link">
                 <a href="{{ $page.Permalink }}" aria-hidden="true" class="project-link__image__container project-link__a slide slide-right">
                     {{/* TODO: use webp */}}

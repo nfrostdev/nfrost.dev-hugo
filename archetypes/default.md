@@ -1,4 +1,5 @@
 ---
+order: 0
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: false

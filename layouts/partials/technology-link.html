@@ -20,6 +20,8 @@
     {{ $url = "https://gohugo.io/" }}
 {{ else if eq .technology "MySQL" }}
     {{ $url = "https://www.mysql.com/" }}
+{{ else if eq .technology "JWT" }}
+    {{ $url = "https://jwt.io/" }}
 {{ end }}
 
 <a href="{{ $url }}" target="_blank" rel="noopener" class="technology-link">{{ .technology }}</a>
