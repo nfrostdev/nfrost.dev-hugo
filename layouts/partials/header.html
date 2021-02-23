@@ -9,7 +9,7 @@
         {{ range $links }}
             <a href="{{ .url }}"
                {{ if ne .url "/" }} target="_blank" rel="noopener" {{ end }}
-               class="header__link">
+               class="header__link{{ if eq .url $.RelPermalink }} header__link--active{{ end }}">
                 <span>{{ .text }}</span>
             </a>
         {{ end }}
