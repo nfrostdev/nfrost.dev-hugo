@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 4
 title: "Department Directory"
 date: 2021-02-23T12:01:05-05:00
 draft: false

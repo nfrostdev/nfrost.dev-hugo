@@ -6,7 +6,7 @@
   }
 
   &s {
-    @apply grid gap-6;
+    @apply grid gap-12;
   }
 
   &__image {
@@ -19,7 +19,7 @@
   }
 
   &__container {
-    @apply flex flex-col justify-center items-center flex-grow;
+    @apply flex flex-col justify-center items-center flex-grow w-72;
 
     @media (min-width: 48em) {
       @apply items-end mr-8 mt-8;
@@ -39,7 +39,7 @@
   }
 
   &__title {
-    @apply font-bold text-lg;
+    @apply font-bold text-xl;
 
     @media (min-width: 48em) {
       @apply text-3xl;

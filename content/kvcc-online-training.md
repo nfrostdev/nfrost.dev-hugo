@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 6
 title: "Online Training"
 date: 2021-02-23T11:53:01-05:00
 draft: false

@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 5
 title: "Employee Directory"
 date: 2021-02-23T11:45:31-05:00
 draft: false
