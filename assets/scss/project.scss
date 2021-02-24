@@ -9,7 +9,6 @@
 
   &__image {
     @apply max-w-3xl w-full rounded-md shadow-md mb-6;
-    min-height: 205px;
 
     @media (min-width: 48em) {
       @apply flex-row-reverse ml-6 mb-0;
