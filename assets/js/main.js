@@ -29,9 +29,7 @@ function fadeInPage() {
             });
         })
         slides.forEach(transition => {
-            transition.classList.remove('slide-left');
-            transition.classList.remove('slide-right');
-            transition.classList.remove('slide-up');
+            classes.map(className => transition.classList.remove(className));
             setTimeout(() => {
                 html.classList.remove('overflow-x-hidden');
             }, 150);
