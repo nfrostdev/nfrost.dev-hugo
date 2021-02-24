@@ -11,7 +11,7 @@ function initProjectLinkTransitions() {
                         transition.classList.add('slide', className);
                     })
                 })
-                setTimeout(() => window.location.href = link.href, 350)
+                setTimeout(() => window.location.href = link.href, 150)
             })
         }
     })
@@ -34,7 +34,7 @@ function fadeInPage() {
         setTimeout(() => {
             document.querySelector('html').classList.remove('overflow-x-hidden');
             transition.classList.remove('slide');
-        }, 350);
+        }, 150);
     })
 }
 
