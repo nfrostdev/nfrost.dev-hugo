@@ -4,11 +4,11 @@
     <div class="project-links">
         {{ range $page := sort $pages "Params.Order" "desc"}}
             <div class="project-link">
-                <a href="{{ $page.Permalink }}" aria-hidden="true" class="project-link__image__container project-link__a slide slide-right">
+                <a href="{{ $page.Permalink }}" class="project-link__image__container project-link__a slide slide-right">
                     {{/* TODO: use webp */}}
                     {{ $webpBg := resources.Get (print "images/" $page.Params.Image) | minify | fingerprint }}
                     {{ $jpgBg := resources.Get (print "images/" $page.Params.Image) | minify | fingerprint }}
-                    {{ $sizes := slice "272" "327" "366" "461" "576" "666" }}
+                    {{ $sizes := slice "272" "327" "461" "576" "666" }}
                     <picture>
                         {{ range $sizes }}
                             <source media="(max-width: {{ . }}px)"
@@ -16,7 +16,6 @@
                         {{ end }}
                         <img src="{{ $webpBg.Permalink }}"
                              class="project-link__image"
-                             aria-hidden="true"
                              loading="lazy"
                              width="576" height="360"
                              onerror="this.onerror = null; this.src = '{{ $jpgBg.Permalink }}'"

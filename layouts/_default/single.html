@@ -3,7 +3,7 @@
         {{/* TODO: use webp */}}
         {{ $webpBg := resources.Get (print "images/" $.Params.Image) | minify | fingerprint }}
         {{ $jpgBg := resources.Get (print "images/" $.Params.Image) | minify | fingerprint }}
-        {{ $sizes := slice "272" "327" "366" "461" "576" "666" "768" }}
+        {{ $sizes := slice "272" "327" "461" "576" "666" "768" }}
         <a href="{{ $webpBg.Permalink }}" target="_blank" rel="noopener" class="slide slide-right">
             <picture>
                 {{ range $sizes }}
@@ -12,7 +12,6 @@
                 {{ end }}
                 <img src="{{ $webpBg.Permalink }}"
                      class="project__image"
-                     aria-hidden="true"
                      loading="lazy"
                      width="768" height="480"
                      onerror="this.onerror = null; this.src = '{{ $jpgBg.Permalink }}'"
