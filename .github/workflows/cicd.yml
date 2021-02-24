@@ -53,7 +53,8 @@ jobs:
       - name: Run Lighthouse CI
         uses: treosh/lighthouse-ci-action@v3
         with:
-          configPath: "./.github/config/lighthouserc.json"
+          configPath: "./.github/lighthouse/config.json"
+          budgetPath: "./.github/lighthouse/budget.json"
           temporaryPublicStorage: true
           urls: |
             https://www.nfrost.dev
