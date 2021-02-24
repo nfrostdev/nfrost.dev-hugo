@@ -8,7 +8,7 @@
                    class="project-link__image__container project-link__a slide slide-right">
                     {{ $webp := resources.Get (print "images/" (print $page.Params.Image ".webp")) | fingerprint }}
                     {{ $jpg := resources.Get (print "images/" (print $page.Params.Image ".jpg")) | fingerprint }}
-                    {{ $sizes := slice "320" "480" "768" "1024" "1280" "1440" }}
+                    {{ $sizes := slice "768" "1024" "1280" "1440" }}
                     <picture>
                         {{ range $sizes }}
                             <source media="(max-width: {{ . }}px)"

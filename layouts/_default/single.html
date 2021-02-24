@@ -2,7 +2,7 @@
     <div class="project__content">
         {{ $webp := resources.Get (print "images/" (print $.Params.Image ".webp")) | fingerprint }}
         {{ $jpg := resources.Get (print "images/" (print $.Params.Image ".jpg")) | fingerprint }}
-        {{ $sizes := slice "320" "480" "768" "1024" "1280" "1440" }}
+        {{ $sizes := slice "768" "1024" "1280" "1440" }}
         <a href="{{ $webp.Permalink }}" target="_blank" rel="noopener" class="slide slide-right">
             <picture>
                 {{ range $sizes }}
