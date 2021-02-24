@@ -12,6 +12,7 @@
   &__image {
     @apply max-w-2xl w-full rounded-md shadow-md mb-2 transition-all duration-100 ease-in-out flex-grow;
     filter: brightness(0.975);
+    min-height: 205px;
 
     &:hover, &:focus {
       filter: brightness(1);
