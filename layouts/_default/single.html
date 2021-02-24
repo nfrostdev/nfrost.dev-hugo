@@ -1,20 +1,20 @@
 {{ define "main" }}
     <div class="project__content">
         {{/* TODO: use webp */}}
-        {{ $webpBg := resources.Get (print "images/" $.Params.Image) | minify | fingerprint }}
-        {{ $jpgBg := resources.Get (print "images/" $.Params.Image) | minify | fingerprint }}
+        {{ $webp := resources.Get (print "images/" (print $.Params.Image ".webp")) | fingerprint }}
+        {{ $jpg := resources.Get (print "images/" (print $.Params.Image ".jpg")) | fingerprint }}
         {{ $sizes := slice "480" "768" "1024" "1280" "1440" }}
-        <a href="{{ $webpBg.Permalink }}" target="_blank" rel="noopener" class="slide slide-right">
+        <a href="{{ $webp.Permalink }}" target="_blank" rel="noopener" class="slide slide-right">
             <picture>
                 {{ range $sizes }}
                     <source media="(max-width: {{ . }}px)"
-                            srcset='{{ ($webpBg.Resize (print . "x q90")).Permalink }}'/>
+                            srcset='{{ ($jpg.Resize (print . "x q90")).Permalink }}'/>
                 {{ end }}
-                <img src="{{ $webpBg.Permalink }}"
+                <img src="{{ $webp.Permalink }}"
                      class="project__image"
                      loading="lazy"
                      width="768" height="480"
-                     onerror="this.onerror = null; this.src = '{{ $jpgBg.Permalink }}'"
+                     onerror="this.onerror = null; this.src = '{{ $jpg.Permalink }}'"
                      alt="{{ $.Title}} Screenshot Preview"/>
             </picture>
         </a>

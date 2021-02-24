@@ -4,7 +4,7 @@ title: "Groceries List App"
 date: 2021-02-22T21:38:31-05:00
 draft: false
 client: Personal Project
-image: grocerieslist.app.jpg
+image: grocerieslist.app
 
 contributors:
     - Solo Project

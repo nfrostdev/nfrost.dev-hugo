@@ -4,7 +4,7 @@ title: "Online Training"
 date: 2021-02-23T11:53:01-05:00
 draft: false
 client: Kalamazoo Valley Community College
-image: training.kvcc.edu.jpg
+image: training.kvcc.edu
 
 contributors:
     - Ana Danoski

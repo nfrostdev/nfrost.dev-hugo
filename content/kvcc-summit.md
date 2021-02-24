@@ -4,7 +4,7 @@ title: "Summit"
 date: 2021-02-23T12:06:51-05:00
 draft: false
 client: Kalamazoo Valley Community College
-image: summit.kvcc.edu.jpg
+image: summit.kvcc.edu
 
 contributors:
     - Ana Danoski

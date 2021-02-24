@@ -4,7 +4,7 @@ title: "Logos Branding Site"
 date: 2021-02-23T12:16:15-05:00
 draft: false
 client: Kalamazoo Valley Community College
-image: branding.kvcc.edu.jpg
+image: branding.kvcc.edu
 
 contributors:
     - KVCC Marketing Team

@@ -4,7 +4,7 @@ title: "Sign In"
 date: 2021-02-23T11:37:32-05:00
 draft: false
 client: Kalamazoo Valley Community College
-image: signin.kvcc.edu.jpg
+image: signin.kvcc.edu
 
 contributors:
     - KVCC Web Development Team
