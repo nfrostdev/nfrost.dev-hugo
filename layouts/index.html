@@ -5,19 +5,18 @@
         {{ range $page := sort $pages "Params.Order" "desc"}}
             <div class="project-link">
                 <a href="{{ $page.Permalink }}" class="project-link__image__container project-link__a slide slide-right">
-                    {{/* TODO: use webp */}}
                     {{ $webp := resources.Get (print "images/" (print $page.Params.Image ".webp")) | fingerprint }}
                     {{ $jpg := resources.Get (print "images/" (print $page.Params.Image ".jpg")) | fingerprint }}
                     {{ $sizes := slice "480" "768" "1024" "1280" "1440" }}
                     <picture>
-                        {{ range $sizes }}
-                            <source media="(max-width: {{ . }}px)"
-                                    srcset='{{ ($jpg.Resize (print . "x q90")).Permalink }}'/>
-                        {{ end }}
+{{/*                        {{ range $sizes }}*/}}
+{{/*                            <source media="(max-width: {{ . }}px)"*/}}
+{{/*                                    srcset='{{ ($jpg.Resize (print . "x q90")).Permalink }}'/>*/}}
+{{/*                        {{ end }}*/}}
                         <img src="{{ $webp.Permalink }}"
                              class="project-link__image"
                              loading="lazy"
-                             width="672" height="420"
+                             width="328" height="205"
                              onerror="this.onerror = null; this.src = '{{ $jpg.Permalink }}'"
                              alt="{{ $page.Title}} Screenshot Preview"/>
                     </picture>
