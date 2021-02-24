@@ -3,7 +3,7 @@
         {{/* TODO: use webp */}}
         {{ $webpBg := resources.Get (print "images/" $.Params.Image) | minify | fingerprint }}
         {{ $jpgBg := resources.Get (print "images/" $.Params.Image) | minify | fingerprint }}
-        {{ $sizes := slice "272" "327" "461" "576" "666" "768" }}
+        {{ $sizes := slice "480" "768" "1024" "1280" "1440" }}
         <a href="{{ $webpBg.Permalink }}" target="_blank" rel="noopener" class="slide slide-right">
             <picture>
                 {{ range $sizes }}
