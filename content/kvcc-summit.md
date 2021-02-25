@@ -9,7 +9,7 @@ image: summit.kvcc.edu
 contributors:
     - Ana Danoski
 
-location: https://summit.kvcc.edu/
+location:
 
 languages:
     - HTML

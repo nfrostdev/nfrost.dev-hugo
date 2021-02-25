@@ -4,7 +4,7 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 draft: false
 client: Kalamazoo Valley Community College
-image: home.kvcc.edu.png
+image: home.kvcc.edu
 
 contributors:
     - Example

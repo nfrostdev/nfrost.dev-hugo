@@ -11,7 +11,7 @@ contributors:
     - Ana Danoski
     - Andrea Hartmann
 
-location: https://home.kvcc.edu/
+location:
 
 languages:
     - PHP

@@ -45,7 +45,11 @@
 
             <div class="project__attribute">
                 <div class="project__attribute__label">Location</div>
-                <div><a href="{{ $.Params.Location }}" target="_blank" rel="noopener">{{ $.Params.Location }}</a></div>
+                {{ if ne $.Params.Location nil }}
+                    <div><a href="{{ $.Params.Location }}" target="_blank" rel="noopener">{{ $.Params.Location }}</a></div>
+                {{ else }}
+                    <div>N/A (Internal Application)</div>
+                {{ end }}
             </div>
 
             <div class="project__attribute project__attribute--technologies">

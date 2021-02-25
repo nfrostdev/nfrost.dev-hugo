@@ -10,7 +10,7 @@ contributors:
     - Ana Danoski
     - Andrea Hartmann
 
-location: https://home.kvcc.edu/
+location: https://training.kvcc.edu/
 
 languages:
     - Go
