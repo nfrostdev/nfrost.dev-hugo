@@ -66,5 +66,6 @@ jobs:
             https://www.nfrost.dev/kvcc-logos-branding-site
             https://www.nfrost.dev/kvcc-online-training
             https://www.nfrost.dev/kvcc-sign-in
+            https://www.nfrost.dev/kvcc-staff-development
             https://www.nfrost.dev/kvcc-summit
           runs: 1
