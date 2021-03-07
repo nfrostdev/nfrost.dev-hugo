@@ -59,6 +59,7 @@ jobs:
           temporaryPublicStorage: true
           urls: |
             https://www.nfrost.dev
+            https://www.nfrost.dev/elizabeth-robinson
             https://www.nfrost.dev/groceries-list-app
             https://www.nfrost.dev/kvcc-department-directory
             https://www.nfrost.dev/kvcc-employee-directory
