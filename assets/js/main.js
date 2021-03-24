@@ -67,7 +67,7 @@ function filterProjects() {
         }
     })
     if (word) {
-        window.history.replaceState(null, document.title, window.location.origin + '?search=' + word);
+        window.history.replaceState(null, document.title, window.location.origin + '?filter=' + word);
         clearFilterButton.classList.remove('non-interactive');
     } else {
         window.history.replaceState(null, document.title, window.location.origin)
@@ -88,10 +88,10 @@ function removeProjectFilter() {
 }
 
 function bindSearchQueryToInput() {
-    const searchParam = new URLSearchParams(window.location.search).get('search');
+    const filterParam = new URLSearchParams(window.location.search).get('filter');
 
-    if (searchParam) {
-        document.getElementById('project').value = searchParam;
+    if (filterParam) {
+        document.getElementById('project').value = filterParam;
         filterProjects();
     }
 }
