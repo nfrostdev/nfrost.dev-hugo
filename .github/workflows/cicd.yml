@@ -20,6 +20,8 @@ jobs:
         run: npm install
       - name: Build
         run: hugo --minify --baseURL="https://www.nfrost.dev"
+      - name: Write JSON Search File
+        run: node ./assets/js/fulltext-search-json-writer.js
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
         with:
