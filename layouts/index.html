@@ -1,6 +1,9 @@
 {{ define "main" }}
     <h1 class="sr-only">Portfolio</h1>
     {{ $pages := slice (.Site.GetPage "/kvcc-employee-portal") (.Site.GetPage "/groceries-list-app") (.Site.GetPage "/kvcc-sign-in") (.Site.GetPage "/kvcc-employee-directory") (.Site.GetPage "/kvcc-online-training") (.Site.GetPage "/kvcc-department-directory") (.Site.GetPage "/kvcc-summit") (.Site.GetPage "/kvcc-logos-branding-site") (.Site.GetPage "/kvcc-staff-development") (.Site.GetPage "/elizabeth-robinson") }}
+
+    {{ partial "partials/filter.html" . }}
+
     <div class="project-links">
         {{ range $page := sort $pages "Params.Order" "desc"}}
             <div class="project-link">
@@ -36,5 +39,7 @@
                 </div>
             </div>
         {{ end}}
+
+        <div class="no-results hidden">Your filter yielded no results.<br>Please try again with different keywords.</div>
     </div>
 {{ end }}

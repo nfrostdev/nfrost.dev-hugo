@@ -5,6 +5,10 @@
     @apply flex-row-reverse items-start text-right;
   }
 
+  &.filtered {
+    @apply hidden;
+  }
+
   &s {
     @apply grid gap-12;
   }

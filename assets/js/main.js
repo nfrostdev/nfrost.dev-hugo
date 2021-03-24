@@ -2,20 +2,12 @@ const html = document.querySelector('html');
 const classes = ['slide-left', 'slide-right', 'slide-up'];
 const slides = document.querySelectorAll('.slide');
 
-function initProjectLinkTransitions() {
-    document.querySelectorAll('a').forEach(link => {
-        // Make sure the link is local and isn't an image or document.
-        if (link.href.includes(window.location.origin) && !link.href.includes('/images/') && !link.href.includes('/documents/')) {
-            link.addEventListener('click', event => {
-                event.preventDefault();
-                classes.map(className => {
-                    document.querySelectorAll('.' + className + '-inactive').forEach(transition => {
-                        transition.classList.add('slide', className);
-                    })
-                })
-                setTimeout(() => window.location.href = link.href, 150)
-            })
-        }
+
+function fadeOutPage() {
+    classes.map(className => {
+        document.querySelectorAll('.' + className + '-inactive').forEach(transition => {
+            transition.classList.add('slide', className);
+        })
     })
 }
 
@@ -38,8 +30,78 @@ function fadeInPage() {
     })
 }
 
-window.onload = function () {
+function initProjectLinkTransitions() {
+    document.querySelectorAll('a').forEach(link => {
+        // Make sure the link is local and isn't an image or document.
+        if (link.href.includes(window.location.origin) && !link.href.includes('/images/') && !link.href.includes('/documents/')) {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                fadeOutPage();
+                setTimeout(() => window.location.href = link.href, 150)
+            })
+        }
+    })
+}
+
+function initFilterFormData() {
+    let tags = [];
+    document.querySelectorAll('.technology-link').forEach(item => {
+        tags.push(item.innerText)
+    })
+
+    tags = [...new Set(tags)].sort();
+    tags.forEach(tag => {
+        const el = document.createElement('option');
+        el.value = tag;
+        document.getElementById('projects').appendChild(el)
+    })
+}
+
+function filterProjects() {
+    const word = document.getElementById('project').value;
+    const clearFilterButton = document.querySelector('.filter__clear-button')
+    document.querySelectorAll('.project-link').forEach(link => {
+        link.classList.remove('filtered');
+        if (!link.innerText.toLowerCase().includes(word.toLowerCase())) {
+            link.classList.add('filtered');
+        }
+    })
+    if (word) {
+        window.history.replaceState(null, document.title, window.location.origin + '?search=' + word);
+        clearFilterButton.classList.remove('non-interactive');
+    } else {
+        window.history.replaceState(null, document.title, window.location.origin)
+        clearFilterButton.classList.add('non-interactive');
+    }
+
+    const noResults = document.querySelector('.no-results');
+    if (document.querySelector('.project-links').innerText === '') {
+        noResults.classList.remove('hidden');
+    } else {
+        noResults.classList.remove('add');
+    }
+}
+
+function removeProjectFilter() {
+    document.getElementById('project').value = null;
+    filterProjects();
+}
+
+function bindSearchQueryToInput() {
+    const searchParam = new URLSearchParams(window.location.search).get('search');
+
+    if (searchParam) {
+        document.getElementById('project').value = searchParam;
+        filterProjects();
+    }
+}
+
+window.addEventListener('load', () => {
     fadeInPage().then(() => {
         initProjectLinkTransitions();
+        if (window.location.pathname === '/') {
+            initFilterFormData();
+            bindSearchQueryToInput();
+        }
     });
-}
+})

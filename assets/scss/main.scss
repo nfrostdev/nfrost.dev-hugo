@@ -25,6 +25,46 @@ body {
   @apply flex flex-col justify-start items-center p-6 max-w-6xl w-full mx-auto;
 }
 
+.filter {
+  @apply mb-8;
+
+  &__container {
+    @apply relative;
+  }
+
+  &__input {
+    @apply px-3 py-2 rounded shadow w-56 appearance-none transition duration-200 ease-in-out;
+
+    &::-webkit-calendar-picker-indicator {
+      display: none;
+    }
+
+    &:focus {
+      @apply outline-none shadow-md;
+    }
+  }
+
+  &__clear-button {
+    @apply absolute top-0 right-0 flex justify-center items-center w-6 h-6 mt-2 mr-2 rounded-sm bg-gray-100 text-gray-400 transition duration-200 ease-in-out;
+
+    &:hover, &:focus {
+      @apply bg-gray-200 text-red-700;
+    }
+
+    &.non-interactive {
+      @apply pointer-events-none opacity-0;
+    }
+  }
+
+  &__clear-icon {
+    @apply w-4 h-4;
+  }
+}
+
+.no-results {
+  @apply text-center;
+}
+
 .slide {
   transition: all 100ms ease-out;
 }
