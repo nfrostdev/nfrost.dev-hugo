@@ -1,6 +1,6 @@
 const fs = require('fs');
-const contentPath = '../../content';
-const publicPath = '../../public';
+const contentPath = 'content';
+const publicPath = 'public';
 
 // TODO: Support recursive file path checking.
 function writeHugoSearchJSON() {
