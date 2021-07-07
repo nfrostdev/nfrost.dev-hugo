@@ -1,5 +1,5 @@
 .project-link {
-  @apply flex flex-col justify-center w-full items-center transition duration-100 ease-in-out;
+  @apply flex flex-col justify-center w-full items-center transition duration-100 ease-in-out text-center;
 
   @media (min-width: 48em) {
     @apply flex-row-reverse items-start text-right;
@@ -43,10 +43,10 @@
   }
 
   &__title {
-    @apply font-bold text-xl;
+    @apply font-bold text-lg leading-tight mt-1;
 
     @media (min-width: 48em) {
-      @apply text-3xl;
+      @apply text-3xl mt-0;
     }
   }
 
